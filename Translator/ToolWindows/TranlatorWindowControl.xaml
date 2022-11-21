@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Translator.ToolWindows.TranslatorWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             xmlns:translator="clr-namespace:Translator.ToolWindows"
+             toolkit:Themes.UseVsTheme="False"
+             mc:Ignorable="d"
+             d:DesignHeight="200"
+             d:DesignWidth="150">
+    <UserControl.DataContext>
+        <translator:TranslatorViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="0, 20, 0, 10"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="14">
+                Source Language
+            </TextBlock>
+            <ComboBox
+                Width="120"
+                ItemsSource="{Binding SourceLanguages}"
+                SelectedItem="{Binding SourceLanguage}">
+            </ComboBox>
+            <TextBlock Margin="0, 20, 0, 10"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="14">
+                Target Language
+            </TextBlock>
+            <ComboBox
+                Width="120"
+                ItemsSource="{Binding TargetLanguages}"
+                SelectedItem="{Binding TargetLanguage}">
+            </ComboBox>
+            <Button Margin="20"
+                    Content="Translate"
+                    Width="120"
+                    Height="30"
+                    HorizontalAlignment="Center"
+                    Command= "{Binding Translate}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
