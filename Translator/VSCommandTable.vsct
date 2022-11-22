@@ -8,8 +8,22 @@
 
   <Commands package="Translator">
     <!--This section defines the elements the user can interact with, like a menu command or a button or combo box in a toolbar. -->
+	  <Groups>
+	    <Group guid="Translator" id="Translate" priority="0x0100">
+		  <Parent guid="VSMainMenu" id="Edit"/>
+	    </Group>
+	  </Groups>
     <Buttons>
-      <Button guid="Translator" id="Translate" priority="0x0100" type="Button">
+		<Button guid="Translator" id="Translate" priority="0x0100" type="Button">
+		  <Parent guid="VSMainMenu" id="Edit"/>
+		  <Icon guid="ImageCatalogGuid" id="ToolWindow" />
+		  <CommandFlag>IconIsMoniker</CommandFlag>
+		  <Strings>
+			<ButtonText>Translator</ButtonText>
+			<LocCanonicalName>.Edit.Translate</LocCanonicalName>
+		  </Strings>
+		</Button>
+		<Button guid="Translator" id="OpenTranslatorWindow" priority="0x0200" type="Button">
         <Parent guid="VSMainMenu" id="View.DevWindowsGroup.OtherWindows.Group1"/>
         <Icon guid="ImageCatalogGuid" id="ToolWindow" />
         <CommandFlag>IconIsMoniker</CommandFlag>
