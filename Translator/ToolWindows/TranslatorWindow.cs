@@ -23,5 +23,5 @@ public class TranslatorWindow : BaseToolWindow<TranslatorWindow>
         => "Translator Window";
 
     public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
-        =>Task.FromResult<FrameworkElement>(new TranslatorWindowControl());
+        => Task.FromResult<FrameworkElement>(new TranslatorWindowControl());
 }
